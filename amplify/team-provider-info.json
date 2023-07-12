@@ -17,6 +17,9 @@
       },
       "api": {
         "amplifywithstorage": {}
+      },
+      "function": {
+        "amwistCreateTodoFile": {}
       }
     }
   }
