@@ -1,6 +1,25 @@
-type Todo @model @auth (rules: [{ allow: owner }]) {
+type Document @model @auth(rules: [
+  { allow: groups, groups: ["admin"], operations: [create, read, update, delete] },
+  { allow: groups, groups: ["staff"], operations: [read] },
+]) {
   id: ID!
-  name: String!
-  description: String
-  owner: String @auth (rules: [{ allow: owner, operations: [create, read] }])
+  parameters: AWSJSON!
+  filePath: String
+}
+
+input CreateDocumentDownloadUrlInput {
+  id: String!
+}
+
+input CreateUserInput {
+  email: String!
+  password: String!
+  groups: [String!]!
+}
+
+type Mutation {
+  createDocumentDownloadUrl(input: CreateDocumentDownloadUrlInput): String
+    @function(name: "amwistCreateDocumentDownloadUrlMutationResolver-${env}")
+  createUser(input: CreateUserInput) : Boolean
+    @function(name: "amwistCreateUserMutationResolver-${env}")
 }

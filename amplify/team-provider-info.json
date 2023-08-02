@@ -1,25 +1,40 @@
 {
   "main": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-amplifywithstorage-main-155106-authRole",
-      "UnauthRoleArn": "arn:aws:iam::693825121436:role/amplify-amplifywithstorage-main-155106-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::693825121436:role/amplify-amplifywithstorage-main-155106-authRole",
+      "AuthRoleName": "amplify-amplifywithstorage-main-102857-authRole",
+      "UnauthRoleArn": "arn:aws:iam::693825121436:role/amplify-amplifywithstorage-main-102857-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::693825121436:role/amplify-amplifywithstorage-main-102857-authRole",
       "Region": "ap-northeast-1",
-      "DeploymentBucketName": "amplify-amplifywithstorage-main-155106-deployment",
-      "UnauthRoleName": "amplify-amplifywithstorage-main-155106-unauthRole",
-      "StackName": "amplify-amplifywithstorage-main-155106",
-      "StackId": "arn:aws:cloudformation:ap-northeast-1:693825121436:stack/amplify-amplifywithstorage-main-155106/7a2daae0-2080-11ee-8e37-0a066a68c96f",
-      "AmplifyAppId": "dnuwjmfrlnawr"
+      "DeploymentBucketName": "amplify-amplifywithstorage-main-102857-deployment",
+      "UnauthRoleName": "amplify-amplifywithstorage-main-102857-unauthRole",
+      "StackName": "amplify-amplifywithstorage-main-102857",
+      "StackId": "arn:aws:cloudformation:ap-northeast-1:693825121436:stack/amplify-amplifywithstorage-main-102857/f3ed6c40-30d3-11ee-a8fb-0a9d0780bd3d",
+      "AmplifyAppId": "d2katcqgot19gx"
     },
     "categories": {
       "auth": {
-        "amplifywithstorage79139780": {}
+        "amplifywithstorage582f37e2": {},
+        "userPoolGroups": {}
+      },
+      "storage": {
+        "s3686d2ff7": {}
       },
       "api": {
         "amplifywithstorage": {}
       },
       "function": {
-        "amwistCreateTodoFile": {}
+        "amplifywithstoragef2e75f36": {
+          "deploymentBucketName": "amplify-amplifywithstorage-main-102857-deployment",
+          "s3Key": "amplify-builds/amplifywithstoragef2e75f36-4a4c4a4b304970383146-build.zip"
+        },
+        "amwistCreateDocumentDownloadUrlMutationResolver": {
+          "deploymentBucketName": "amplify-amplifywithstorage-main-102857-deployment",
+          "s3Key": "amplify-builds/amwistCreateDocumentDownloadUrlMutationResolver-44727435497a64747063-build.zip"
+        },
+        "amwistCreateUserMutationResolver": {
+          "deploymentBucketName": "amplify-amplifywithstorage-main-102857-deployment",
+          "s3Key": "amplify-builds/amwistCreateUserMutationResolver-665766315a7554416e6d-build.zip"
+        }
       }
     }
   }

@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "storage": {
+      "s3686d2ff7": [
+        "create"
+      ],
+      "Document:@model(appsync)": [
+        "update"
+      ]
+    }
+  },
+  "lambdaLayers": []
+}

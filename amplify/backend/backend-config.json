@@ -7,7 +7,7 @@
             "UserPoolId"
           ],
           "category": "auth",
-          "resourceName": "amplifywithstorage79139780"
+          "resourceName": "amplifywithstorage582f37e2"
         }
       ],
       "output": {
@@ -16,7 +16,7 @@
           "defaultAuthentication": {
             "authenticationType": "AMAZON_COGNITO_USER_POOLS",
             "userPoolConfig": {
-              "userPoolId": "authamplifywithstorage79139780"
+              "userPoolId": "authamplifywithstorage582f37e2"
             }
           }
         }
@@ -26,7 +26,7 @@
     }
   },
   "auth": {
-    "amplifywithstorage79139780": {
+    "amplifywithstorage582f37e2": {
       "customAuth": false,
       "dependsOn": [],
       "frontendAuthConfig": {
@@ -51,24 +51,34 @@
       },
       "providerPlugin": "awscloudformation",
       "service": "Cognito"
+    },
+    "userPoolGroups": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "UserPoolId",
+            "AppClientIDWeb",
+            "AppClientID",
+            "IdentityPoolId"
+          ],
+          "category": "auth",
+          "resourceName": "amplifywithstorage582f37e2"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Cognito-UserPool-Groups"
     }
   },
   "function": {
-    "S3Trigger773207bd": {
-      "build": true,
-      "providerPlugin": "awscloudformation",
-      "service": "Lambda"
-    },
-    "amwistCreateTodoFile": {
+    "amplifywithstoragef2e75f36": {
       "build": true,
       "dependsOn": [
         {
           "attributes": [
-            "GraphQLAPIIdOutput",
-            "GraphQLAPIEndpointOutput"
+            "BucketName"
           ],
-          "category": "api",
-          "resourceName": "amplifywithstorage"
+          "category": "storage",
+          "resourceName": "s3686d2ff7"
         },
         {
           "attributes": [
@@ -80,6 +90,120 @@
       ],
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
+    },
+    "amwistCreateDocumentDownloadUrlMutationResolver": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "BucketName"
+          ],
+          "category": "storage",
+          "resourceName": "s3686d2ff7"
+        },
+        {
+          "attributes": [
+            "GraphQLAPIIdOutput"
+          ],
+          "category": "api",
+          "resourceName": "amplifywithstorage"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "amwistCreateUserMutationResolver": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "UserPoolId"
+          ],
+          "category": "auth",
+          "resourceName": "amplifywithstorage582f37e2"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_amplifywithstoragef2e75f36_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "amplifywithstoragef2e75f36"
+        }
+      ]
+    },
+    "AMPLIFY_function_amplifywithstoragef2e75f36_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "amplifywithstoragef2e75f36"
+        }
+      ]
+    },
+    "AMPLIFY_function_amwistCreateDocumentDownloadUrlMutationResolver_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "amwistCreateDocumentDownloadUrlMutationResolver"
+        }
+      ]
+    },
+    "AMPLIFY_function_amwistCreateDocumentDownloadUrlMutationResolver_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "amwistCreateDocumentDownloadUrlMutationResolver"
+        }
+      ]
+    },
+    "AMPLIFY_function_amwistCreateUserMutationResolver_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "amwistCreateUserMutationResolver"
+        }
+      ]
+    },
+    "AMPLIFY_function_amwistCreateUserMutationResolver_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "amwistCreateUserMutationResolver"
+        }
+      ]
+    }
+  },
+  "storage": {
+    "s3686d2ff7": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "UserPoolId"
+          ],
+          "category": "auth",
+          "resourceName": "amplifywithstorage582f37e2"
+        },
+        {
+          "attributes": [
+            "adminGroupRole"
+          ],
+          "category": "auth",
+          "resourceName": "userPoolGroups"
+        },
+        {
+          "attributes": [
+            "staffGroupRole"
+          ],
+          "category": "auth",
+          "resourceName": "userPoolGroups"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "S3"
     }
   }
 }

@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "auth": {
+      "amplifywithstorage582f37e2": [
+        "create",
+        "read",
+        "update"
+      ]
+    }
+  },
+  "lambdaLayers": []
+}

@@ -1,0 +1,13 @@
+{
+  "lambdaLayers": [],
+  "permissions": {
+    "storage": {
+      "s3686d2ff7": [
+        "read"
+      ],
+      "Document:@model(appsync)": [
+        "read"
+      ]
+    }
+  }
+}

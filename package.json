@@ -9,15 +9,26 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@aws-amplify/ui-react": "^5.0.6",
+    "@tanstack/react-query": "^4.32.1",
     "@types/node": "20.4.1",
     "@types/react": "18.2.14",
     "@types/react-dom": "18.2.6",
+    "aws-amplify": "^5.3.6",
     "eslint": "8.44.0",
     "eslint-config-next": "13.4.9",
+    "file-saver": "^2.0.5",
     "next": "13.4.9",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "typescript": "5.1.6"
+    "react-hook-form": "^7.45.2",
+    "react-icons": "^4.10.1",
+    "typescript": "5.1.6",
+    "uuid": "^9.0.0"
   },
-  "packageManager": "yarn@1.22.19"
+  "packageManager": "yarn@1.22.19",
+  "devDependencies": {
+    "@types/file-saver": "^2.0.5",
+    "@types/uuid": "^9.0.2"
+  }
 }

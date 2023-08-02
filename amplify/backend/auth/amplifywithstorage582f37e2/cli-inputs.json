@@ -1,10 +1,10 @@
 {
   "version": "1",
   "cognitoConfig": {
-    "identityPoolName": "amplifywithstorage79139780_identitypool_79139780",
-    "allowUnauthenticatedIdentities": false,
-    "resourceNameTruncated": "amplif79139780",
-    "userPoolName": "amplifywithstorage79139780_userpool_79139780",
+    "identityPoolName": "amplifywithstorage582f37e2_identitypool_582f37e2",
+    "allowUnauthenticatedIdentities": true,
+    "resourceNameTruncated": "amplif582f37e2",
+    "userPoolName": "amplifywithstorage582f37e2_userpool_582f37e2",
     "autoVerifiedAttributes": [
       "email"
     ],
@@ -31,18 +31,40 @@
     "userpoolClientReadAttributes": [
       "email"
     ],
-    "userpoolClientLambdaRole": "amplif79139780_userpoolclient_lambda_role",
+    "userpoolClientLambdaRole": "amplif582f37e2_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
-    "sharedId": "79139780",
-    "resourceName": "amplifywithstorage79139780",
+    "sharedId": "582f37e2",
+    "resourceName": "amplifywithstorage582f37e2",
     "authSelections": "identityPoolAndUserPool",
     "useDefault": "default",
     "usernameAttributes": [
       "email"
     ],
-    "userPoolGroupList": [],
+    "triggers": {},
+    "userPoolGroupList": [
+      "admin",
+      "staff"
+    ],
     "serviceName": "Cognito",
     "usernameCaseSensitive": false,
-    "useEnabledMfas": true
+    "useEnabledMfas": true,
+    "authRoleArn": {
+      "Fn::GetAtt": [
+        "AuthRole",
+        "Arn"
+      ]
+    },
+    "unauthRoleArn": {
+      "Fn::GetAtt": [
+        "UnauthRole",
+        "Arn"
+      ]
+    },
+    "breakCircularDependency": true,
+    "dependsOn": [],
+    "parentStack": {
+      "Ref": "AWS::StackId"
+    },
+    "permissions": []
   }
 }
